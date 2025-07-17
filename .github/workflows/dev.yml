@@ -24,4 +24,3 @@ jobs:
           sleep 10
           curl http://localhost:5000/api/healthcheck || exit 1
           pkill -f "python app.py"
-          curl http://localhost:5000/api/healthcheck || exit 1
