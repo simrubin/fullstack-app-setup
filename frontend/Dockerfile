@@ -1,11 +1,11 @@
-FROM node:20-alpine
+FROM node:22
 
 WORKDIR /app
 
 COPY package*.json ./
-RUN rm -rf node_modules package-lock.json
-RUN npm install --force
 COPY . .
+RUN rm -rf node_modules package-lock.json
+RUN npm install 
 
 EXPOSE 5173
 
