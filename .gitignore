@@ -24,4 +24,12 @@ dist-ssr
 *.sw?
 
 # Python virtual environments
-backend/.venv/
+backend/.venv/bin/
+backend/.venv/lib/
+backend/.venv/include/
+backend/.venv/pyvenv.cfg
+backend/.venv/__pycache__/
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
