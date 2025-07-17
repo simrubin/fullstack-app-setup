@@ -17,7 +17,7 @@ jobs:
         run: |
           python -m venv .venv
           source .venv/bin/activate
-          pip install -r backend/.venv/requirements.txt
+          pip install -r backend//requirements.txt
 
       - name: Run backend health check
         run: |
