@@ -5,9 +5,8 @@ WORKDIR /app
 COPY requirements.txt .
 RUN pip install -r requirements.txt
 
-COPY config.yaml .
-COPY .venv/ .venv/
+COPY . .
 
 EXPOSE 5000
 
-CMD ["python", ".venv/app.py"]
+CMD ["python", "app.py"]

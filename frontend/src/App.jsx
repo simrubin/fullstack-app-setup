@@ -16,7 +16,11 @@ function App() {
 
   const fetchData = async () => {
     const [data, error] = await tryCatch(async () => {
-      const res = await fetch("/api/healthcheck");
+      // Use environment variable for deployed backend or Docker Compose backend
+      const apiUrl = import.meta.env.VITE_API_URL || "http://localhost:8000";
+      const endpoint = `${apiUrl}/api/healthcheck`;
+      console.log("Fetching from:", endpoint); // Debug log
+      const res = await fetch(endpoint);
       return await res.json();
     });
 

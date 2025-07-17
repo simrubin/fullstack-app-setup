@@ -4,7 +4,7 @@ import json
 import yaml
 from db import init_db
 from routes.messages import messages_bp
-
+from flask_cors import CORS
 
 #Load config from YAML file
 config = yaml.safe_load(open("config.yaml", "r"))
@@ -13,6 +13,7 @@ python_config = config["python_service"]
 
 def init_app():
     app = Flask(__name__)
+    CORS(app) # Enable CORS for frontend communication
     
     # Initialize database
     init_db()

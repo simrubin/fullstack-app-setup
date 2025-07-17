@@ -22,13 +22,17 @@ services:
       retries: 3
 
   frontend:
-    build: ./frontend
+    build:
+      context: ./frontend
+      target: development
     container_name: frontend
     volumes:
       - ./frontend:/app
       - /app/node_modules # This prevents local node_modules from overriding container's
     ports:
       - "5173:5173"
+    environment:
+      - VITE_API_URL=http://localhost:8000
     depends_on:
       - backend
     networks:
