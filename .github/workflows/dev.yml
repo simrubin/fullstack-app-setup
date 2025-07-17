@@ -1,0 +1,26 @@
+name: Dev CI
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.9"
+
+      - name: Install backend dependencies
+        run: |
+          python -m venv .venv
+          source .venv/bin/activate
+          pip install -r backend/requirements.txt
+
+      - name: Run backend health check
+        run: |
+          python -m http.server 5000 &
+          sleep 2
+          curl http://localhost:5000/api/health || exit 1
