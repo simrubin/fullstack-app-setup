@@ -1,12 +1,9 @@
-version: "3.8"
-
 services:
   backend:
     build: ./backend
     container_name: backend
     volumes:
       - ./backend:/app
-      - ./db:/app/db
     ports:
       - "8000:5000"
     networks:

@@ -49,7 +49,7 @@ function App() {
         <Silk
           speed={3}
           scale={1}
-          color="#007c11ff"
+          color="#02540dff"
           noiseIntensity={1.2}
           rotation={0.2}
         />
@@ -67,8 +67,10 @@ function App() {
         <p style={{ color: "white" }} className="read-the-docs">
           Click on the button to check the status of the API.
         </p>
-        <button onClick={fetchData}>Retry API Call</button>
-        <p style={{ color: "white" }}>API Status: {message}</p>
+        <button onClick={fetchData}>Call API</button>
+        <p style={{ color: "white", fontWeight: "bold" }}>
+          API Status: {message}
+        </p>
       </div>
     </>
   );
