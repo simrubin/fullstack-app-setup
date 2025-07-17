@@ -15,13 +15,13 @@ jobs:
 
       - name: Install backend dependencies
         run: |
-          pip install -r backend//requirements.txt
+          pip install -r backend/requirements.txt
 
       - name: Run backend health check
         run: |
-          source .venv/bin/activate
-          cd backend/.venv
-          cp ../config.yaml .
+          cd backend
           python app.py &
-          sleep 5
+          sleep 10
+          curl http://localhost:5000/api/healthcheck || exit 1
+          pkill -f "python app.py"
           curl http://localhost:5000/api/healthcheck || exit 1
