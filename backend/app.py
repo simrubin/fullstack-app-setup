@@ -1,10 +1,11 @@
 # save this as app.py
-from flask import Flask
+from flask import Flask, app
 import json
 import yaml
 from db import init_db
 from routes.messages import messages_bp
 from flask_cors import CORS
+import os
 
 #Load config from YAML file
 config = yaml.safe_load(open("config.yaml", "r"))
@@ -13,7 +14,8 @@ python_config = config["python_service"]
 
 def init_app():
     app = Flask(__name__)
-    CORS(app) # Enable CORS for frontend communication
+    allowed_origin = os.getenv("FRONTEND_ORIGIN", "http://localhost:5173")
+    CORS(app, origins=[allowed_origin]) # Allow CORS from frontend origin
     
     # Initialize database
     init_db()
