@@ -130,6 +130,7 @@ graph LR
 - 🏗️ Create an Azure account
 - 📦 Set up a Resource Group
 - 🏪 Create an Azure Container Registry
+- 🤐 Set up Github secrets for all relevant Azure credentials
 
 #### 2️⃣ GitHub Secrets Configuration
 
@@ -163,7 +164,7 @@ Push to `main` branch and watch the magic happen! ✨
 | 🔒 **CORS**       | Basic config       | Must configure for deployed frontend URL |
 | 🔐 **Secrets**    | GitHub Actions     | Time-consuming setup                     |
 | 📊 **Migrations** | Manual             | No automated database migrations         |
-| 🌿 **Branching**  | Main only          | No separate dev/prod workflows           |
+| 🌿 **Branching**  | Main only          | No separate dev/UAT/prod workflows       |
 | 🔍 **Language**   | JavaScript         | TypeScript would improve type safety     |
 | 📈 **Monitoring** | Basic health check | Limited observability                    |
 
@@ -220,11 +221,7 @@ mindmap
 
 **Questions or feedback?**
 
-[![GitHub Issues](https://img.shields.io/badge/GitHub-Issues-orange?logo=github)](https://github.com/your-repo/issues)
-[![Email](https://img.shields.io/badge/Email-Contact-blue?logo=gmail)](mailto:your-email@example.com)
-
----
-
-**Made with ❤️ for Maincode**
+[![GitHub Issues](https://img.shields.io/badge/GitHub-Issues-orange?logo=github)](https://github.com/simrubin/fullstack-app-setup/issues)
+[![Email](https://img.shields.io/badge/Email-Contact-blue?logo=gmail)](mailto:simrubin13@gmail.com)
 
 </div>
