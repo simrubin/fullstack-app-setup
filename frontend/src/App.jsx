@@ -68,7 +68,7 @@ function App() {
           textAlign: "center",
         }}
       >
-        <h1 style={{ color: "white" }}>Hello, Maincode!</h1>
+        <h1 style={{ color: "white" }}>Hello, World!</h1>
         <p style={{ color: "white" }} className="read-the-docs">
           Click on the button to check the status of the API.
         </p>
