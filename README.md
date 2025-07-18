@@ -2,8 +2,6 @@
 
 <div align="center">
 
-![Full Stack App Banner](https://via.placeholder.com/800x200/6366f1/ffffff?text=Full+Stack+App+%7C+Maincode+Assignment)
-
 **A modern full-stack web application demonstrating end-to-end development and deployment**
 
 [![Deploy Status](https://img.shields.io/badge/deployment-automated-brightgreen)](https://github.com/your-repo/actions)
@@ -24,14 +22,14 @@ This project is a simple full-stack web application built and deployed as part o
 
 <div align="center">
 
-| Layer | Technology | Purpose |
-|-------|------------|---------|
-| 🎨 **Frontend** | React (Vite) | Interactive user interface |
-| ⚙️ **Backend** | Python Flask | REST API server |
-| 🗄️ **Database** | SQLite | Data persistence |
-| 🐳 **Container** | Docker & Docker Compose | Containerization |
-| ☁️ **Cloud** | Azure Container Instances | Cloud deployment |
-| 🔄 **CI/CD** | GitHub Actions | Automated deployment |
+| Layer            | Technology                | Purpose                    |
+| ---------------- | ------------------------- | -------------------------- |
+| 🎨 **Frontend**  | React (Vite)              | Interactive user interface |
+| ⚙️ **Backend**   | Python Flask              | REST API server            |
+| 🗄️ **Database**  | SQLite                    | Data persistence           |
+| 🐳 **Container** | Docker & Docker Compose   | Containerization           |
+| ☁️ **Cloud**     | Azure Container Instances | Cloud deployment           |
+| 🔄 **CI/CD**     | GitHub Actions            | Automated deployment       |
 
 </div>
 
@@ -67,9 +65,9 @@ graph TD
 
 <div align="center">
 
-| Tool | Purpose | Link |
-|------|---------|------|
-| 🐳 Docker | Containerization | [Install Docker](https://www.docker.com/) |
+| Tool       | Purpose           | Link                                               |
+| ---------- | ----------------- | -------------------------------------------------- |
+| 🐳 Docker  | Containerization  | [Install Docker](https://www.docker.com/)          |
 | 💻 VS Code | IDE (recommended) | [Download VS Code](https://code.visualstudio.com/) |
 
 </div>
@@ -92,10 +90,10 @@ docker-compose up --build
 
 **🎉 Your app is now running!**
 
-| Service | URL | Status |
-|---------|-----|--------|
+| Service     | URL                                            | Status   |
+| ----------- | ---------------------------------------------- | -------- |
 | 🎨 Frontend | [http://localhost:5173](http://localhost:5173) | ✅ Ready |
-| ⚙️ Backend | [http://localhost:8000](http://localhost:8000) | ✅ Ready |
+| ⚙️ Backend  | [http://localhost:8000](http://localhost:8000) | ✅ Ready |
 
 </div>
 
@@ -118,6 +116,7 @@ graph LR
 </div>
 
 **🎯 Workflow Overview:**
+
 - ✅ Builds and pushes Docker images for frontend and backend to Azure Container Registry
 - ✅ Deploys containers to Azure Container Instances with public DNS endpoints
 
@@ -127,25 +126,27 @@ graph LR
 <summary>Click to expand manual deployment steps</summary>
 
 #### 1️⃣ Azure Resources Setup
+
 - 🏗️ Create an Azure account
 - 📦 Set up a Resource Group
 - 🏪 Create an Azure Container Registry
 
 #### 2️⃣ GitHub Secrets Configuration
 
-| Secret | Description |
-|--------|-------------|
+| Secret              | Description                  |
+| ------------------- | ---------------------------- |
 | `AZURE_CREDENTIALS` | Azure service principal JSON |
-| `ACR_LOGIN_SERVER` | Container registry URL |
-| `ACR_USERNAME` | Registry username |
-| `ACR_PASSWORD` | Registry password |
-| `RESOURCE_GROUP` | Azure resource group name |
-| `ACI_BACKEND_NAME` | Backend container name |
-| `ACI_BACKEND_DNS` | Backend DNS label |
-| `ACI_FRONTEND_NAME` | Frontend container name |
-| `ACI_FRONTEND_DNS` | Frontend DNS label |
+| `ACR_LOGIN_SERVER`  | Container registry URL       |
+| `ACR_USERNAME`      | Registry username            |
+| `ACR_PASSWORD`      | Registry password            |
+| `RESOURCE_GROUP`    | Azure resource group name    |
+| `ACI_BACKEND_NAME`  | Backend container name       |
+| `ACI_BACKEND_DNS`   | Backend DNS label            |
+| `ACI_FRONTEND_NAME` | Frontend container name      |
+| `ACI_FRONTEND_DNS`  | Frontend DNS label           |
 
 #### 3️⃣ Deploy
+
 Push to `main` branch and watch the magic happen! ✨
 
 </details>
@@ -153,3 +154,77 @@ Push to `main` branch and watch the magic happen! ✨
 ---
 
 ## ⚖️ Trade-offs & Limitations
+
+<div align="center">
+
+| Area              | Current State      | Limitation                               |
+| ----------------- | ------------------ | ---------------------------------------- |
+| 🗄️ **Database**   | SQLite             | Not suitable for production scale        |
+| 🔒 **CORS**       | Basic config       | Must configure for deployed frontend URL |
+| 🔐 **Secrets**    | GitHub Actions     | Time-consuming setup                     |
+| 📊 **Migrations** | Manual             | No automated database migrations         |
+| 🌿 **Branching**  | Main only          | No separate dev/prod workflows           |
+| 🔍 **Language**   | JavaScript         | TypeScript would improve type safety     |
+| 📈 **Monitoring** | Basic health check | Limited observability                    |
+
+</div>
+
+---
+
+## 🎯 Areas for Improvement
+
+<div align="center">
+
+```mermaid
+mindmap
+  root((Improvements))
+    Database
+      Automated migrations
+      Connection pooling
+    Monitoring
+      Advanced health checks
+      Logging system
+    Configuration
+      Environment variables
+      Feature flags
+    Testing
+      Integration tests
+      E2E testing
+    Security
+      Authentication
+      Rate limiting
+```
+
+</div>
+
+---
+
+## 🎁 Optional Bonus Features
+
+<div align="center">
+
+| Feature             | Status         | Description                 |
+| ------------------- | -------------- | --------------------------- |
+| ❤️ Health Check     | ✅ Implemented | `/api/healthcheck` endpoint |
+| 🔄 CI/CD Pipeline   | ✅ Implemented | GitHub Actions workflow     |
+| 🐳 Containerization | ✅ Implemented | Docker & Docker Compose     |
+| 🛡️ Error Handling   | ✅ Basic       | API error responses         |
+
+</div>
+
+---
+
+## 📞 Contact
+
+<div align="center">
+
+**Questions or feedback?**
+
+[![GitHub Issues](https://img.shields.io/badge/GitHub-Issues-orange?logo=github)](https://github.com/your-repo/issues)
+[![Email](https://img.shields.io/badge/Email-Contact-blue?logo=gmail)](mailto:your-email@example.com)
+
+---
+
+**Made with ❤️ for Maincode**
+
+</div>
