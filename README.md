@@ -194,6 +194,9 @@ mindmap
     Security
       Authentication
       Rate limiting
+    Deployment
+      Use HTTPS (TLS Encryption)
+      Quicker setup
 ```
 
 </div>

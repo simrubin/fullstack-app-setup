@@ -23,7 +23,7 @@ def init_db():
     count = conn.execute("SELECT COUNT(*) FROM messages").fetchone()[0]
     if count == 0:
         sample_messages = [
-            ("Hello, how are you!", datetime.now().isoformat()),
+            ("Hello, how are you?", datetime.now().isoformat()),
             ("This is a test!", datetime.now().isoformat()),
 
         ]
