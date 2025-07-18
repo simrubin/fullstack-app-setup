@@ -60,6 +60,8 @@ jobs:
             --dns-name-label ${{ secrets.ACI_BACKEND_DNS }} \
             --ports 5000 \
             --os-type Linux \
+            --cpu 0.5 \
+            --memory 1 \
             --registry-login-server ${{ secrets.ACR_LOGIN_SERVER }} \
             --registry-username ${{ secrets.ACR_USERNAME }} \
             --registry-password ${{ secrets.ACR_PASSWORD }}
@@ -73,6 +75,8 @@ jobs:
             --dns-name-label ${{ secrets.ACI_FRONTEND_DNS }} \
             --ports 5173 \
             --os-type Linux \
+            --cpu 0.5 \
+            --memory 1 \
             --registry-login-server ${{ secrets.ACR_LOGIN_SERVER }} \
             --registry-username ${{ secrets.ACR_USERNAME }} \
             --registry-password ${{ secrets.ACR_PASSWORD }}
