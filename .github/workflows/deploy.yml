@@ -72,6 +72,10 @@ jobs:
           echo "ACR_PASSWORD: ${{ secrets.ACR_PASSWORD }}"
 
       - name: Deploy Frontend container
+        env:
+          REGISTRY_LOGIN_SERVER: ${{ secrets.ACR_LOGIN_SERVER }}
+          REGISTRY_USERNAME: ${{ secrets.ACR_USERNAME }}
+          REGISTRY_PASSWORD: ${{ secrets.ACR_PASSWORD }}
         run: |
           az container create \
             --resource-group ${{ secrets.RESOURCE_GROUP }} \
@@ -82,6 +86,6 @@ jobs:
             --os-type Linux \
             --cpu 0.5 \
             --memory 1 \
-            --registry-login-server ${{ secrets.ACR_LOGIN_SERVER }} \
-            --registry-username ${{ secrets.ACR_USERNAME }} \
-            --registry-password ${{ secrets.ACR_PASSWORD }}
+            --registry-login-server $REGISTRY_LOGIN_SERVER \
+            --registry-username $REGISTRY_USERNAME \
+            --registry-password $REGISTRY_PASSWORD
