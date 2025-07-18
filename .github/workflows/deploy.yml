@@ -66,6 +66,11 @@ jobs:
             --registry-username ${{ secrets.ACR_USERNAME }} \
             --registry-password ${{ secrets.ACR_PASSWORD }}
 
+      - name: Debug ACR_USERNAME and ACR_PASSWORD
+        run: |
+          echo "ACR_USERNAME: ${{ secrets.ACR_USERNAME }}"
+          echo "ACR_PASSWORD: ${{ secrets.ACR_PASSWORD }}"
+
       - name: Deploy Frontend container
         run: |
           az container create \

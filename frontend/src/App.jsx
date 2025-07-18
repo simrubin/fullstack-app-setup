@@ -15,8 +15,9 @@ function App() {
   const [message, setMessage] = useState("Loading...");
 
   const fetchData = async () => {
+    // Debug: print VITE_API_URL
+    console.log("VITE_API_URL:", import.meta.env.VITE_API_URL);
     const [data, error] = await tryCatch(async () => {
-      // Use environment variable for deployed backend or Docker Compose backend
       const apiUrl = import.meta.env.VITE_API_URL;
       const endpoint = `${apiUrl}/api/healthcheck`;
       console.log("Fetching from:", endpoint); // Debug log
