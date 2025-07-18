@@ -16,7 +16,6 @@ function App() {
 
   const fetchData = async () => {
     // Debug: print VITE_API_URL
-    console.log("VITE_API_URL:", import.meta.env.VITE_API_URL);
     const [data, error] = await tryCatch(async () => {
       const apiUrl = import.meta.env.VITE_API_URL;
       const endpoint = `${apiUrl}/api/healthcheck`;

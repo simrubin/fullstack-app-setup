@@ -1,124 +1,155 @@
-# Full Stack App Setup
+# 🚀 Full Stack App Setup
 
-## Overview
+<div align="center">
 
-This project is a simple full-stack web application built and deployed as part of the Maincode Software Development Engineer take-home assignment.  
-It demonstrates end-to-end setup, code clarity, and developer experience using modern tooling and cloud deployment.
+![Full Stack App Banner](https://via.placeholder.com/800x200/6366f1/ffffff?text=Full+Stack+App+%7C+Maincode+Assignment)
 
-**Tech Stack:**
+**A modern full-stack web application demonstrating end-to-end development and deployment**
 
-- **Frontend:** React (Vite)
-- **Backend:** Python Flask
-- **Database:** SQLite
-- **Containerization:** Docker, Docker Compose
-- **Cloud Deployment:** Azure Container Instances
-- **CI/CD:** GitHub Actions
+[![Deploy Status](https://img.shields.io/badge/deployment-automated-brightgreen)](https://github.com/your-repo/actions)
+[![Frontend](https://img.shields.io/badge/frontend-React+Vite-61dafb)](https://vitejs.dev/)
+[![Backend](https://img.shields.io/badge/backend-Python+Flask-green)](https://flask.palletsprojects.com/)
+[![Database](https://img.shields.io/badge/database-SQLite-blue)](https://sqlite.org/)
+[![Cloud](https://img.shields.io/badge/cloud-Azure-0078d4)](https://azure.microsoft.com/)
 
----
-
-## Features
-
-- **Frontend:** Displays a "Hello, Maincode!" message and checks API health.
-- **Backend:** Provides `/api/hello` and `/api/healthcheck` endpoints.
-- **Database:** SQLite with basic initialization and usage.
-- **Health Check:** `/api/healthcheck` endpoint for monitoring.
-- **CI/CD:** Automated build and deployment via GitHub Actions.
+</div>
 
 ---
 
-## Local Development
+## 🎯 Overview
 
-### Prerequisites
+This project is a simple full-stack web application built and deployed as part of the **Maincode Software Development Engineer** take-home assignment. It demonstrates end-to-end setup, code clarity, and developer experience using modern tooling and cloud deployment.
 
-- [Docker](https://www.docker.com/)
-- [VS Code](https://code.visualstudio.com/) (recommended for DevContainer support)
+## 🛠️ Tech Stack
 
-### Steps
+<div align="center">
 
-1. **Clone the repository:**
+| Layer | Technology | Purpose |
+|-------|------------|---------|
+| 🎨 **Frontend** | React (Vite) | Interactive user interface |
+| ⚙️ **Backend** | Python Flask | REST API server |
+| 🗄️ **Database** | SQLite | Data persistence |
+| 🐳 **Container** | Docker & Docker Compose | Containerization |
+| ☁️ **Cloud** | Azure Container Instances | Cloud deployment |
+| 🔄 **CI/CD** | GitHub Actions | Automated deployment |
 
-   ```sh
-   git clone <your-repo-url>
-   cd maincode-app
-   ```
-
-2. **Open in DevContainer (VS Code):**
-
-   - Open the folder in VS Code.
-   - If prompted, "Reopen in Container".
-
-3. **Run the stack with Docker Compose:**
-   ```sh
-   docker-compose up --build
-   ```
-   - Frontend: [http://localhost:5173](http://localhost:5173)
-   - Backend: [http://localhost:8000](http://localhost:8000)
+</div>
 
 ---
 
-## Cloud Deployment (Azure Container Instances)
+## ✨ Features
 
-### Automated Deployment
+<div align="center">
 
-Deployment is handled via GitHub Actions.  
-On push to `main`, the workflow:
+```mermaid
+graph TD
+    A[🌐 Frontend] --> B[📡 API Health Check]
+    A --> C[👋 Hello Message]
+    D[🖥️ Backend] --> E[📋 /api/hello]
+    D --> F[❤️ /api/healthcheck]
+    G[🗄️ Database] --> H[📊 SQLite Storage]
+    I[🔄 CI/CD] --> J[🚀 Auto Deploy]
+```
 
-- Builds and pushes Docker images for frontend and backend to Azure Container Registry.
-- Deploys containers to Azure Container Instances with public DNS endpoints.
+</div>
 
-### Manual Deployment
-
-1. **Set up Azure resources:**
-
-   - Azure Container Registry
-   - Resource Group
-
-2. **Configure GitHub Secrets:**
-
-   - `AZURE_CREDENTIALS`
-   - `ACR_LOGIN_SERVER`
-   - `ACR_USERNAME`
-   - `ACR_PASSWORD`
-   - `RESOURCE_GROUP`
-   - `ACI_BACKEND_NAME`
-   - `ACI_BACKEND_DNS`
-   - `ACI_FRONTEND_NAME`
-   - `ACI_FRONTEND_DNS`
-
-3. **Push to `main` branch:**  
-   The workflow will build, push, and deploy automatically.
+- **🎨 Frontend:** Displays a "Hello, Maincode!" message and checks API health
+- **⚙️ Backend:** Provides `/api/hello` and `/api/healthcheck` endpoints
+- **🗄️ Database:** SQLite with basic initialization and usage
+- **❤️ Health Check:** `/api/healthcheck` endpoint for monitoring
+- **🔄 CI/CD:** Automated build and deployment via GitHub Actions
 
 ---
 
-## Trade-offs & Limitations
+## 🏠 Local Development
 
-- **Database:** Uses SQLite for simplicity; not suitable for production scale.
-- **CORS:** Backend must be configured to allow requests from the deployed frontend URL.
-- **Secrets:** All cloud credentials must be set in GitHub Actions.
-- **No migrations:** Database migrations are not automated.
-- **Monitoring:** Basic health check endpoint only.
+### 📋 Prerequisites
+
+<div align="center">
+
+| Tool | Purpose | Link |
+|------|---------|------|
+| 🐳 Docker | Containerization | [Install Docker](https://www.docker.com/) |
+| 💻 VS Code | IDE (recommended) | [Download VS Code](https://code.visualstudio.com/) |
+
+</div>
+
+### 🚀 Quick Start
+
+```bash
+# 1️⃣ Clone the repository
+git clone <your-repo-url>
+cd maincode-app
+
+# 2️⃣ Open in DevContainer (VS Code)
+# Open folder in VS Code → "Reopen in Container"
+
+# 3️⃣ Run the stack
+docker-compose up --build
+```
+
+<div align="center">
+
+**🎉 Your app is now running!**
+
+| Service | URL | Status |
+|---------|-----|--------|
+| 🎨 Frontend | [http://localhost:5173](http://localhost:5173) | ✅ Ready |
+| ⚙️ Backend | [http://localhost:8000](http://localhost:8000) | ✅ Ready |
+
+</div>
 
 ---
 
-## Areas for Improvement
+## ☁️ Cloud Deployment (Azure Container Instances)
 
-- Add automated database migrations.
-- Enhance error handling and logging.
-- Add more robust health checks and monitoring.
-- Use environment variables for more flexible configuration.
-- Add integration tests to CI workflow.
+### 🤖 Automated Deployment
+
+<div align="center">
+
+```mermaid
+graph LR
+    A[📝 Push to main] --> B[🔨 Build Images]
+    B --> C[📤 Push to ACR]
+    C --> D[🚀 Deploy to ACI]
+    D --> E[🌐 Live App]
+```
+
+</div>
+
+**🎯 Workflow Overview:**
+- ✅ Builds and pushes Docker images for frontend and backend to Azure Container Registry
+- ✅ Deploys containers to Azure Container Instances with public DNS endpoints
+
+### 🔧 Manual Setup
+
+<details>
+<summary>Click to expand manual deployment steps</summary>
+
+#### 1️⃣ Azure Resources Setup
+- 🏗️ Create an Azure account
+- 📦 Set up a Resource Group
+- 🏪 Create an Azure Container Registry
+
+#### 2️⃣ GitHub Secrets Configuration
+
+| Secret | Description |
+|--------|-------------|
+| `AZURE_CREDENTIALS` | Azure service principal JSON |
+| `ACR_LOGIN_SERVER` | Container registry URL |
+| `ACR_USERNAME` | Registry username |
+| `ACR_PASSWORD` | Registry password |
+| `RESOURCE_GROUP` | Azure resource group name |
+| `ACI_BACKEND_NAME` | Backend container name |
+| `ACI_BACKEND_DNS` | Backend DNS label |
+| `ACI_FRONTEND_NAME` | Frontend container name |
+| `ACI_FRONTEND_DNS` | Frontend DNS label |
+
+#### 3️⃣ Deploy
+Push to `main` branch and watch the magic happen! ✨
+
+</details>
 
 ---
 
-## Optional Bonus Features
-
-- Health check endpoint (`/api/healthcheck`)
-- GitHub Actions workflow for CI/CD
-- Containerized database initialization
-- Basic error handling in API
-
----
-
-## How to Contact
-
-For questions or feedback, please reach out via GitHub Issues.
+## ⚖️ Trade-offs & Limitations
