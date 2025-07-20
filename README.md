@@ -92,17 +92,17 @@ cd fullstack-app-setup
 
 # 2️⃣ Ensure Docker Desktop is open
 
-# 3️⃣ Run the stack (locally)
+# 3️⃣ Run the stack
 docker-compose up --build
 
-# 3️⃣ Run the stack in Dev Container
+# 4️⃣ Run the stack in Dev Container
 CMD+Shift+P -> Dev Containers: Rebuild and Reopen in Container
 ## Stack is run automatically in Dev Container
 ```
 
 <div align="center">
 
-**🎉 Your app is now running!**
+**🎉 The app is now running!**
 
 | Service     | URL                                            | Status   |
 | ----------- | ---------------------------------------------- | -------- |
@@ -164,10 +164,6 @@ graph LR
 
 Push to `main` branch and the CI/CD pipeline will take care of the rest.
 
-My Deployed Azure Containers can be found at:
-Frontend - http://simeon-frontend-717.australiasoutheast.azurecontainer.io:5173/
-Backend - http://simeon-backend-717.australiasoutheast.azurecontainer.io:5000/
-
 </details>
 
 ---
@@ -215,6 +211,15 @@ Azure SQL Database offers automatic scaling, high availability and security feat
 - I would also add a routing system like React-Router for navigation between pages.
 - If I were to continue developing a larger frontend, I would use a CSS framework such as Tailwind CSS
   for more rapid and conveneint styling.
+
+---
+
+## 🌐 My Deployed Azure Containers
+
+My Deployed Azure Containers can be found at:
+
+- **Frontend:** [http://simeon-frontend-717.australiasoutheast.azurecontainer.io:5173/](http://simeon-frontend-717.australiasoutheast.azurecontainer.io:5173/)
+- **Backend:** [http://simeon-backend-717.australiasoutheast.azurecontainer.io:5000/](http://simeon-backend-717.australiasoutheast.azurecontainer.io:5000/)
 
 ---
 
