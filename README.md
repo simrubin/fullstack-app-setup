@@ -77,10 +77,9 @@ graph TD
 
 <div align="center">
 
-| Tool       | Purpose           | Link                                               |
-| ---------- | ----------------- | -------------------------------------------------- |
-| 🐳 Docker  | Containerization  | [Install Docker](https://www.docker.com/)          |
-
+| Tool      | Purpose          | Link                                      |
+| --------- | ---------------- | ----------------------------------------- |
+| 🐳 Docker | Containerization | [Install Docker](https://www.docker.com/) |
 
 </div>
 
@@ -91,11 +90,14 @@ graph TD
 git clone https://github.com/simrubin/fullstack-app-setup.git
 cd fullstack-app-setup
 
-# 2️⃣ Open in DevContainer (VS Code)
-# Open folder in VS Code → "Reopen in Container"
+# 2️⃣ Ensure Docker Desktop is open
 
-# 3️⃣ Run the stack
+# 3️⃣ Run the stack (locally)
 docker-compose up --build
+
+# 3️⃣ Run the stack in Dev Container
+CMD+Shift+P -> Dev Containers: Rebuild and Reopen in Container
+## Stack is run automatically in Dev Container
 ```
 
 <div align="center">
@@ -211,6 +213,8 @@ Azure SQL Database offers automatic scaling, high availability and security feat
 
 - I would use TypeScript for added type safety and also break the app up into separate UI components.
 - I would also add a routing system like React-Router for navigation between pages.
+- If I were to continue developing a larger frontend, I would use a CSS framework such as Tailwind CSS
+  for more rapid and conveneint styling.
 
 ---
 
