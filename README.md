@@ -80,7 +80,7 @@ graph TD
 | Tool       | Purpose           | Link                                               |
 | ---------- | ----------------- | -------------------------------------------------- |
 | 🐳 Docker  | Containerization  | [Install Docker](https://www.docker.com/)          |
-| 💻 VS Code | IDE (recommended) | [Download VS Code](https://code.visualstudio.com/) |
+
 
 </div>
 
@@ -88,8 +88,8 @@ graph TD
 
 ```bash
 # 1️⃣ Clone the repository
-git clone <your-repo-url>
-cd maincode-app
+git clone https://github.com/simrubin/fullstack-app-setup.git
+cd fullstack-app-setup
 
 # 2️⃣ Open in DevContainer (VS Code)
 # Open folder in VS Code → "Reopen in Container"
