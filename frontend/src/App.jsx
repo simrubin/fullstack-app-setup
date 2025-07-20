@@ -3,34 +3,21 @@ import Silk from "./components/Backgrounds/Silk/Silk.jsx";
 
 import "./App.css";
 
-const tryCatch = async (func) => {
-  try {
-    return [await func(), null];
-  } catch (error) {
-    return [null, error];
-  }
-};
-
 function App() {
   const [message, setMessage] = useState("Loading...");
 
   const fetchData = async () => {
-    // Debug: print VITE_API_URL
-    const [data, error] = await tryCatch(async () => {
+    try {
       const apiUrl = import.meta.env.VITE_API_URL;
       const endpoint = `${apiUrl}/api/healthcheck`;
       console.log("Fetching from:", endpoint); // Debug log
       const res = await fetch(endpoint);
-      return await res.json();
-    });
-
-    if (error) {
+      const data = await res.json();
+      console.log("API Response:", data); // Debug log
+      setMessage(data.status || JSON.stringify(data));
+    } catch (error) {
       console.error("Error fetching data:", error);
       setMessage("Error connecting to API");
-    } else {
-      console.log("API Response:", data); // Debug log
-      // The API returns {status: "OK"}, not {message: "..."}
-      setMessage(data.status || JSON.stringify(data));
     }
   };
 

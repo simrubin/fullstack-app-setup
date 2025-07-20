@@ -2,8 +2,6 @@
 
 <div align="center">
 
-**A modern full-stack web application demonstrating end-to-end development and deployment**
-
 [![Deploy Status](https://img.shields.io/badge/deployment-automated-brightgreen)](https://github.com/simrubin/fullstack-app-setup/actions)
 [![Frontend](https://img.shields.io/badge/frontend-React+Vite-61dafb)](https://vitejs.dev/)
 [![Backend](https://img.shields.io/badge/backend-Python+Flask-green)](https://flask.palletsprojects.com/)
@@ -55,7 +53,21 @@ graph TD
 - **⚙️ Backend:** Provides `/api/hello` and `/api/healthcheck` endpoints
 - **🗄️ Database:** SQLite with basic initialization and usage
 - **❤️ Health Check:** `/api/healthcheck` endpoint for monitoring
-- **🔄 CI/CD:** Automated build and deployment via GitHub Actions
+- **🔄 CI/CD:** Automated build, health check and deployment via GitHub Actions
+
+---
+
+## Additional Features
+
+<div align="center">
+
+| Feature           | Status         | Description                                                       |
+| ----------------- | -------------- | ----------------------------------------------------------------- |
+| ❤️ Health Check   | ✅ Implemented | `/api/healthcheck` endpoint                                       |
+| 🔄 CI/CD Pipeline | ✅ Implemented | GitHub Actions workflow for health check and deployment           |
+| 🛡️ Error Handling | ✅ Basic       | API error handling implemented using `tryCatch()` in the frontend |
+
+</div>
 
 ---
 
@@ -160,47 +172,45 @@ Backend - http://simeon-backend-717.australiasoutheast.azurecontainer.io:5000/
 
 ## 🎯 Areas for Improvement
 
-**Console Logs in Prod**
-Whilst I recognise it's not good practice to have console logs in a prod environment,
-these are simply used to show that the local env and the deployed container both call the APIs
-from the correct endpoints.
+### Console Logs in Prod
 
-**Improvements for API endpoints**
-• I would add authentication for APIs such as Token-based or session auth (e.g. JWT, OAuth)
-• I would use a rate limiter to avoid abuse
-
-**Improvements for Deployment and CI/CD**
-With more time I'd add:
-• I would also add unit testing to the CI/CD setup with more time.
-• Environment separation for dev, UAT and prod. Each with its own CI/CD pipeline and secrets.
-I would also add a proper branching system for this.
-• HTTPS & Security support via a reverse proxy (i.e. Nginx).
-• I would use a dedicated secrets manager to (i.e. Azure Key Vault) instead of storing them
-in Github actions. This would allow for faster deployment setup.
-
-**Database**  
-SQLite is not suitable for production scale for larger apps. Azure SQL Database
-offers automatic scaling, high availability and securtiy features which are more
-appropriate for larger apps.
-
-**Improvements to frontend**
-• I would use TypeScript for added type safety and also break the app up into separate UI components.
-• I would also add a routing system like React-Router for navigation between pages.
+> Whilst I recognise it's not good practice to have console logs in a prod environment,  
+> these are simply used to show that the local env and the deployed container both call the APIs  
+> from the correct endpoints.
 
 ---
 
-## 🎁 Optional Bonus Features
+### Improvements for API Endpoints
 
-<div align="center">
+- I would add authentication for APIs such as Token-based or session auth (e.g. JWT, OAuth)
+- I would use a rate limiter to avoid abuse
 
-| Feature             | Status         | Description                 |
-| ------------------- | -------------- | --------------------------- |
-| ❤️ Health Check     | ✅ Implemented | `/api/healthcheck` endpoint |
-| 🔄 CI/CD Pipeline   | ✅ Implemented | GitHub Actions workflow     |
-| 🐳 Containerization | ✅ Implemented | Docker & Docker Compose     |
-| 🛡️ Error Handling   | ✅ Basic       | API error responses         |
+---
 
-</div>
+### Improvements for Deployment and CI/CD
+
+With more time I'd add:
+
+- I would also add unit testing to the CI/CD setup with more time.
+- Environment separation for dev, UAT and prod. Each with its own CI/CD pipeline and secrets.
+- I would also add a proper branching system for this.
+- HTTPS & Security support via a reverse proxy (i.e. Nginx).
+- I would use a dedicated secrets manager to (i.e. Azure Key Vault) instead of storing them in Github actions.  
+  This would allow for faster deployment setup.
+
+---
+
+### Database
+
+SQLite is not suitable for production scale for larger apps.  
+Azure SQL Database offers automatic scaling, high availability and security features which are more appropriate for larger apps.
+
+---
+
+### Improvements to Frontend
+
+- I would use TypeScript for added type safety and also break the app up into separate UI components.
+- I would also add a routing system like React-Router for navigation between pages.
 
 ---
 
