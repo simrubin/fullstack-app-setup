@@ -1,10 +1,10 @@
-# 🚀 Full Stack App Setup
+# Full Stack App Setup
 
 <div align="center">
 
 **A modern full-stack web application demonstrating end-to-end development and deployment**
 
-[![Deploy Status](https://img.shields.io/badge/deployment-automated-brightgreen)](https://github.com/your-repo/actions)
+[![Deploy Status](https://img.shields.io/badge/deployment-automated-brightgreen)](https://github.com/simrubin/fullstack-app-setup/actions)
 [![Frontend](https://img.shields.io/badge/frontend-React+Vite-61dafb)](https://vitejs.dev/)
 [![Backend](https://img.shields.io/badge/backend-Python+Flask-green)](https://flask.palletsprojects.com/)
 [![Database](https://img.shields.io/badge/database-SQLite-blue)](https://sqlite.org/)
@@ -16,20 +16,20 @@
 
 ## 🎯 Overview
 
-This project is a simple full-stack web application built and deployed as part of the **Maincode Software Development Engineer** take-home assignment. It demonstrates end-to-end setup, code clarity, and developer experience using modern tooling and cloud deployment.
+This project is a simple full-stack web application built and deployed as part of the a Software Develpment take-home assignment. It demonstrates an end-to-end setup of a fullstack dev environment using modern tooling and cloud deployment.
 
 ## 🛠️ Tech Stack
 
 <div align="center">
 
-| Layer            | Technology                | Purpose                    |
-| ---------------- | ------------------------- | -------------------------- |
-| 🎨 **Frontend**  | React (Vite)              | Interactive user interface |
-| ⚙️ **Backend**   | Python Flask              | REST API server            |
-| 🗄️ **Database**  | SQLite                    | Data persistence           |
-| 🐳 **Container** | Docker & Docker Compose   | Containerization           |
-| ☁️ **Cloud**     | Azure Container Instances | Cloud deployment           |
-| 🔄 **CI/CD**     | GitHub Actions            | Automated deployment       |
+| Layer            | Technology                | Purpose              |
+| ---------------- | ------------------------- | -------------------- |
+| 🎨 **Frontend**  | React (Vite)              | User interface       |
+| ⚙️ **Backend**   | Python Flask              | REST API server      |
+| 🗄️ **Database**  | SQLite                    | Data persistence     |
+| 🐳 **Container** | Docker & Docker Compose   | Containerization     |
+| ☁️ **Cloud**     | Azure Container Instances | Cloud deployment     |
+| 🔄 **CI/CD**     | GitHub Actions            | Automated deployment |
 
 </div>
 
@@ -148,58 +148,44 @@ graph LR
 
 #### 3️⃣ Deploy
 
-Push to `main` branch and watch the magic happen! ✨
+Push to `main` branch and the CI/CD pipeline will take care of the rest.
+
+My Deployed Azure Containers can be found at:
+Frontend - http://simeon-frontend-717.australiasoutheast.azurecontainer.io:5173/
+Backend - http://simeon-backend-717.australiasoutheast.azurecontainer.io:5000/
 
 </details>
 
 ---
 
-## ⚖️ Trade-offs & Limitations
-
-<div align="center">
-
-| Area              | Current State      | Limitation                               |
-| ----------------- | ------------------ | ---------------------------------------- |
-| 🗄️ **Database**   | SQLite             | Not suitable for production scale        |
-| 🔒 **CORS**       | Basic config       | Must configure for deployed frontend URL |
-| 🔐 **Secrets**    | GitHub Actions     | Time-consuming setup                     |
-| 📊 **Migrations** | Manual             | No automated database migrations         |
-| 🌿 **Branching**  | Main only          | No separate dev/UAT/prod workflows       |
-| 🔍 **Language**   | JavaScript         | TypeScript would improve type safety     |
-| 📈 **Monitoring** | Basic health check | Limited observability                    |
-
-</div>
-
----
-
 ## 🎯 Areas for Improvement
 
-<div align="center">
+**Console Logs in Prod**
+Whilst I recognise it's not good practice to have console logs in a prod environment,
+these are simply used to show that the local env and the deployed container both call the APIs
+from the correct endpoints.
 
-```mermaid
-mindmap
-  root((Improvements))
-    Database
-      Automated migrations
-      Connection pooling
-    Monitoring
-      Advanced health checks
-      Logging system
-    Configuration
-      Environment variables
-      Feature flags
-    Testing
-      Integration tests
-      E2E testing
-    Security
-      Authentication
-      Rate limiting
-    Deployment
-      Use HTTPS (TLS Encryption)
-      Quicker setup
-```
+**Improvements for API endpoints**
+• I would add authentication for APIs such as Token-based or session auth (e.g. JWT, OAuth)
+• I would use a rate limiter to avoid abuse
 
-</div>
+**Improvements for Deployment and CI/CD**
+With more time I'd add:
+• I would also add unit testing to the CI/CD setup with more time.
+• Environment separation for dev, UAT and prod. Each with its own CI/CD pipeline and secrets.
+I would also add a proper branching system for this.
+• HTTPS & Security support via a reverse proxy (i.e. Nginx).
+• I would use a dedicated secrets manager to (i.e. Azure Key Vault) instead of storing them
+in Github actions. This would allow for faster deployment setup.
+
+**Database**  
+SQLite is not suitable for production scale for larger apps. Azure SQL Database
+offers automatic scaling, high availability and securtiy features which are more
+appropriate for larger apps.
+
+**Improvements to frontend**
+• I would use TypeScript for added type safety and also break the app up into separate UI components.
+• I would also add a routing system like React-Router for navigation between pages.
 
 ---
 
